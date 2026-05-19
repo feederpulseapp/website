@@ -42,6 +42,14 @@ a:hover { text-decoration: underline; }
   letter-spacing: -0.03em;
 }
 
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
 .brand-mark {
   width: 40px;
   height: 40px;
@@ -135,12 +143,42 @@ h3 { color: var(--accent); margin-bottom: 8px; }
 }
 
 .pulse-line {
-  height: 34px;
+  height: 40px;
   margin: 20px 0;
+  border-radius: 12px;
+  border: 1px solid rgba(99, 211, 190, 0.2);
+  position: relative;
+  overflow: hidden;
   background:
-    linear-gradient(90deg, transparent 0 8%, var(--accent) 8% 30%, transparent 30% 34%, var(--accent) 34% 38%, transparent 38% 42%, var(--accent) 42% 46%, transparent 46% 50%, var(--accent) 50% 82%, transparent 82%);
-  clip-path: polygon(0 48%, 22% 48%, 28% 48%, 32% 10%, 36% 86%, 42% 34%, 47% 48%, 100% 48%, 100% 55%, 47% 55%, 42% 41%, 36% 93%, 32% 17%, 28% 55%, 0 55%);
-  filter: drop-shadow(0 0 8px rgba(99, 211, 190, 0.7));
+    linear-gradient(180deg, rgba(99, 211, 190, 0.08), rgba(99, 211, 190, 0.02)),
+    repeating-linear-gradient(90deg, transparent 0 18px, rgba(99, 211, 190, 0.08) 18px 19px);
+}
+
+.pulse-line::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  clip-path: polygon(0 58%, 16% 58%, 22% 58%, 26% 38%, 30% 72%, 34% 10%, 38% 90%, 44% 58%, 56% 58%, 62% 58%, 66% 46%, 70% 64%, 74% 20%, 78% 82%, 84% 58%, 100% 58%, 100% 64%, 0 64%);
+  filter: drop-shadow(0 0 8px rgba(99, 211, 190, 0.8));
+}
+
+.pulse-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: -40%;
+  width: 40%;
+  background: linear-gradient(90deg, transparent 0%, rgba(99, 211, 190, 0.38) 52%, transparent 100%);
+  animation: pulse-scan 3.2s linear infinite;
+}
+
+@keyframes pulse-scan {
+  to { left: 105%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-line::after { animation: none; }
 }
 
 .mock-buttons { display: grid; gap: 12px; }
