@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Changelog & Releases — FeederPulse</title>
+  <meta name="description" content="FeederPulse release notes, upcoming features, and historical changelog." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://feederpulse.app/changelog/" />
+  <meta property="og:title" content="Changelog & Releases — FeederPulse" />
+  <meta property="og:description" content="FeederPulse release notes, upcoming features, and historical changelog." />
+  <meta property="og:image" content="https://feederpulse.app/assets/apple-touch-icon.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://feederpulse.app/changelog/" />
+  <meta property="twitter:title" content="Changelog & Releases — FeederPulse" />
+  <meta property="twitter:description" content="FeederPulse release notes, upcoming features, and historical changelog." />
+  <meta property="twitter:image" content="https://feederpulse.app/assets/apple-touch-icon.png" />
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+
+  <!-- Google Fonts (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XJ4RJ6B6T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5XJ4RJ6B6T');
+  </script>
+
+  <link rel="stylesheet" href="../styles/main.css?v=1.0.1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+
+<body>
+  <header class="container nav">
+    <a class="brand" href="../" aria-label="FeederPulse home">
+      <img src="../assets/logo.png" alt="FeederPulse Logo" class="brand-logo">
+      <span>Feeder<span class="brand-pulse">Pulse</span></span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <nav class="nav-links" id="nav-menu">
+      <a href="../">Home</a>
+      <a href="../#features">Features</a>
+      <a href="../#screenshots">Screenshots</a>
+      <a href="../changelog/" class="active">Changelog</a>
+      <a href="../privacy-policy/">Privacy</a>
+      <a href="../support/">Support</a>
+    </nav>
+  </header>
+
+  <main class="container policy">
+    <div class="card changelog">
+      <h1>Changelog & Releases</h1>
+      <p class="lead">Stay up to date with the latest features, improvements, and bug fixes for FeederPulse.</p>
+
+      <div class="release-item">
+        <div class="release-header">
+          <h2>v1.3.0</h2>
+          <span class="release-date">May 30, 2026</span>
+        </div>
+        <div class="pulse-line"></div>
+        <div class="release-content">
+          <h3><i class="fa-solid fa-plus" style="color:var(--accent);margin-right:8px;"></i>Added</h3>
+          <ul>
+            <li><strong>Session Pulse Analysis</strong>: A premium, ECG-inspired curved line chart displaying raw scores, momentum adjustments, and smoothing values reactively.</li>
+            <li><strong>Biometric Pulse Metrics</strong>: Dynamic calculation of Peak/Average Pulse scores, standard deviation, and session stability.</li>
+            <li><strong>Smart Period Detection</strong>: Automated, sliding 40-minute "Best Window" calculation and low-activity "Dead Zones" detection.</li>
+            <li><strong>Automated Bank Insights</strong>: Textual summaries detailing catch pace, lulls, momentum spikes, and trailing fatigue.</li>
+            <li><strong>History Pulse Sparklines</strong>: Mini visual pulse fingerprints embedded inside finished session list items.</li>
+          </ul>
+          
+          <div style="display: flex; gap: 16px; margin: 24px 0; flex-wrap: wrap; justify-content: flex-start;">
+            <div style="display: flex; flex-direction: column; gap: 6px; width: 180px;">
+              <img src="../assets/screenshots/1000003124.webp" alt="Session Pulse Analytics" style="width: 100%; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.35); transition: transform 0.25s; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'" />
+              <span class="muted" style="font-size: 11px; text-align: center; margin-top: 4px; font-weight: 600;">Session Pulse Analytics</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px; width: 180px;">
+              <img src="../assets/screenshots/1000003122.webp" alt="History Pulse Sparklines" style="width: 100%; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.35); transition: transform 0.25s; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'" />
+              <span class="muted" style="font-size: 11px; text-align: center; margin-top: 4px; font-weight: 600;">History Pulse Sparklines</span>
+            </div>
+          </div>
+          
+          <h3><i class="fa-solid fa-pen" style="color:var(--accent-2);margin-right:8px;"></i>Changed</h3>
+          <ul>
+            <li><strong>Settings UI Optimization</strong>: Repositioned the app version dynamic label on the settings screen for a cleaner, more intuitive bottom layout.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="release-item">
+        <div class="release-header">
+          <h2>v1.2.0</h2>
+          <span class="release-date">May 29, 2026</span>
+        </div>
+        <div class="pulse-line"></div>
+        <div class="release-content">
+          <h3><i class="fa-solid fa-plus" style="color:var(--accent);margin-right:8px;"></i>Added</h3>
+          <ul>
+            <li><strong>Team-based Competitions</strong>: You can now mark a competition as team-based during setup. Team-based competitions are visually distinguished in the session list with a team icon.</li>
+            <li><strong>Team Ranking Visualization</strong>: The team icon in the session list dynamically colors to Gold, Silver, or Bronze based on your final team placement.</li>
+            <li><strong>Final Weigh-in Feature</strong>: Added a dedicated flow for recording the final weigh-in of all keepnets at the end of a session, locking the individual catch editing to ensure data integrity.</li>
+          </ul>
+          
+          <div style="display: flex; gap: 16px; margin: 24px 0; flex-wrap: wrap; justify-content: flex-start;">
+            <div style="display: flex; flex-direction: column; gap: 6px; width: 180px;">
+              <img src="../assets/screenshots/1000003137.webp" alt="New event setup with Team-based competition toggle" style="width: 100%; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.35); transition: transform 0.25s; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'" />
+              <span class="muted" style="font-size: 11px; text-align: center; margin-top: 4px; font-weight: 600;">Team Competition Setup</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px; width: 180px;">
+              <img src="../assets/screenshots/1000003135.webp" alt="Sessions history list with team icon and sparklines" style="width: 100%; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.35); transition: transform 0.25s; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'" />
+              <span class="muted" style="font-size: 11px; text-align: center; margin-top: 4px; font-weight: 600;">Team Session in History</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px; width: 180px;">
+              <img src="../assets/screenshots/1000003133.webp" alt="Session detail showing Final Placement with Team Ranking" style="width: 100%; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.35); transition: transform 0.25s; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'" />
+              <span class="muted" style="font-size: 11px; text-align: center; margin-top: 4px; font-weight: 600;">Final Placement &amp; Team Ranking</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px; width: 180px;">
+              <img src="../assets/screenshots/1000003129.webp" alt="Final weigh-in dialog for recording total keepnet weight" style="width: 100%; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.35); transition: transform 0.25s; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'" />
+              <span class="muted" style="font-size: 11px; text-align: center; margin-top: 4px; font-weight: 600;">Final Weigh-in</span>
+            </div>
+          </div>
+          
+          <h3><i class="fa-solid fa-pen" style="color:var(--accent-2);margin-right:8px;"></i>Changed</h3>
+          <ul>
+            <li><strong>Individual Ranking Editing</strong>: Redesigned the ranking edit experience. Instead of a single modal for all rankings, you can now tap directly on Sector, Overall, or Team to edit them independently.</li>
+            <li><strong>Improved Statistics Accuracy</strong>: Virtual direct weigh-ins (fishes weighed without being assigned to a keepnet) are now accurately aggregated into the final session statistics.</li>
+            <li><strong>Localization Updates</strong>: Improved translation accuracy.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="release-item">
+        <div class="release-header">
+          <h2>v1.1.3 (Build 5)</h2>
+          <span class="release-date">May 25, 2026</span>
+        </div>
+        <div class="pulse-line"></div>
+        <div class="release-content">
+          <p>This milestone release introduces a fully customizable, drag-and-drop <strong>Active Session Layout</strong> for advanced tracking, alongside a beautifully simplified <strong>Casual (Everyday Leisure) Mode</strong>.</p>
+          
+          <div style="display: flex; gap: 16px; margin: 24px 0; flex-wrap: wrap; justify-content: flex-start;">
+            <div style="display: flex; flex-direction: column; gap: 6px; width: 180px;">
+              <img src="../assets/screenshots/1000003116.webp" alt="Casual Mode (Fishing Time)" style="width: 100%; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.35); transition: transform 0.25s; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'" />
+              <span class="muted" style="font-size: 11px; text-align: center; margin-top: 4px; font-weight: 600;">Casual Mode (Fishing Time)</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px; width: 180px;">
+              <img src="../assets/screenshots/1000003120.webp" alt="Casual Mode (Cast Time)" style="width: 100%; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.35); transition: transform 0.25s; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'" />
+              <span class="muted" style="font-size: 11px; text-align: center; margin-top: 4px; font-weight: 600;">Casual Mode (Cast Time)</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px; width: 180px;">
+              <img src="../assets/screenshots/layout_editor.webp" alt="Customizable Active Session Layout editor with draggable widget cards" style="width: 100%; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.35); transition: transform 0.25s; cursor: pointer;" onmouseover="this.style.transform='translateY(-4px) scale(1.02)'" onmouseout="this.style.transform='translateY(0) scale(1)'" />
+              <span class="muted" style="font-size: 11px; text-align: center; margin-top: 4px; font-weight: 600;">Layout Editor</span>
+            </div>
+          </div>
+          
+          <h3><i class="fa-solid fa-star" style="color:var(--accent);margin-right:8px;"></i>Key Enhancements</h3>
+          <ul>
+            <li><strong>Customizable Active Session Layout (Beta)</strong>: Take complete control of your bank-side active workspace with interactive, reorderable widgets.</li>
+            <li><strong>Casual / Leisure Active Session Mode</strong>: Log leisure fishing sessions with a beautiful, green-themed interface completely stripped of competitive elements.</li>
+            <li><strong>Integrated Dashboard & 3D Flip Timer</strong>: Reduced the circular timer frame and embedded it inside the presets control panel with a premium 3D flip interaction.</li>
+            <li><strong>Smart Distance Presets & Premium Bottom Sheets</strong>: Seamless cache reusability and modernized dialog layouts.</li>
+            <li><strong>Global Timer Mode</strong>: Added a new setting to toggle between Count Up and Countdown timer modes globally.</li>
+            <li><strong>Practice End Times</strong>: Added support for an optional end time for Quick Practice sessions.</li>
+          </ul>
+
+          <h3><i class="fa-solid fa-wrench" style="color:var(--muted);margin-right:8px;"></i>Fixed & Polished</h3>
+          <ul>
+            <li><strong>Session End Notification & Timer Teardown</strong>: Fixed an alert leak where ending an active session early left background cast notifications active.</li>
+            <li><strong>Background Opacity Fix</strong>: Corrected catch detail sheets to render with solid surface colors.</li>
+            <li><strong>Distance Chart Resiliency</strong>: Fixed an issue in the Catch Distance Chart.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="release-item">
+        <div class="release-header">
+          <h2>v1.1.2</h2>
+          <span class="release-date">May 20, 2026</span>
+        </div>
+        <div class="pulse-line"></div>
+        <div class="release-content">
+          <h3><i class="fa-solid fa-plus" style="color:var(--accent);margin-right:8px;"></i>Added</h3>
+          <ul>
+            <li><strong>Casual Session Mode</strong>: Introduced a new session type for casual fishing without strict competition rules.</li>
+            <li><strong>Customizable Active Session Layout</strong>: Enhanced the active session screen with toggle options to hide/show specific elements and reorder them.</li>
+            <li><strong>Distance Analytics</strong>: Added a new "Species by Distance" chart and refined catch list styling.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="release-item">
+        <div class="release-header">
+          <h2>v1.1.0</h2>
+          <span class="release-date">May 15, 2026</span>
+        </div>
+        <div class="pulse-line"></div>
+        <div class="release-content">
+          <h3><i class="fa-solid fa-plus" style="color:var(--accent);margin-right:8px;"></i>Added</h3>
+          <ul>
+            <li><strong>Session Detail Statistics</strong>: Added detailed KPIs including catch rate (fishes/hr), weight rate (grams/hr), and catch per cast ratio.</li>
+            <li><strong>Extreme Sun Theme</strong>: Added a high-contrast Extreme Sun theme for better visibility during bright days on the bank.</li>
+            <li><strong>Quick Scheduling</strong>: Introduced quick-scheduling features for upcoming sessions with push reminders and organizer notifications.</li>
+            <li><strong>Live Stats Toggle</strong>: Added a setting to turn live statistics calculation on/off during active sessions.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="release-item">
+        <div class="release-header">
+          <h2>v1.0.0</h2>
+          <span class="release-date">Initial Release</span>
+        </div>
+        <div class="pulse-line"></div>
+        <div class="release-content">
+          <h3><i class="fa-solid fa-rocket" style="color:var(--accent);margin-right:8px;"></i>Features</h3>
+          <ul>
+            <li><strong>Core Competition Engine</strong>: Full support for tracking catches, keepnet limits, casts, and overall weights during matches.</li>
+            <li><strong>Offline-First Data</strong>: All session records and catch logs are stored securely on your device, so you can track your fishing anywhere on the bank without an internet connection.</li>
+            <li><strong>Dark Mode First UI</strong>: Battery-saving dark interfaces built for sunlight readability and one-handed operation.</li>
+            <li><strong>Localization</strong>: Full Hungarian and English language support.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Feeder<span class="">Pulse</span> · <a href="../">Home</a> · <a href="../privacy-policy/">Privacy Policy</a> · <a href="../support/">Support</a></div>
+  </footer>
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        navMenu.classList.toggle('is-active');
+        
+        // Morph hamburger icon into close X
+        const icon = navToggle.querySelector('i');
+        if (icon) {
+          if (!isExpanded) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+          } else {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+          }
+        }
+        
+        document.body.style.overflow = !isExpanded ? 'hidden' : '';
+      });
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — FeederPulse</title>
+  <meta name="description" content="Need help with FeederPulse? Contact our support team." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://feederpulse.app/support/" />
+  <meta property="og:title" content="Support — FeederPulse" />
+  <meta property="og:description" content="Need help with FeederPulse? Contact our support team." />
+  <meta property="og:image" content="https://feederpulse.app/assets/apple-touch-icon.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://feederpulse.app/support/" />
+  <meta property="twitter:title" content="Support — FeederPulse" />
+  <meta property="twitter:description" content="Need help with FeederPulse? Contact our support team." />
+  <meta property="twitter:image" content="https://feederpulse.app/assets/apple-touch-icon.png" />
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+
+  <!-- Google Fonts (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XJ4RJ6B6T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5XJ4RJ6B6T');
+  </script>
+
+  <link rel="stylesheet" href="../styles/main.css?v=1.0.1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+
+<body>
+  <header class="container nav">
+    <a class="brand" href="../" aria-label="FeederPulse home">
+      <img src="../assets/logo.png" alt="FeederPulse Logo" class="brand-logo">
+      <span>Feeder<span class="brand-pulse">Pulse</span></span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <nav class="nav-links" id="nav-menu">
+      <a href="../">Home</a>
+      <a href="../#features">Features</a>
+      <a href="../#screenshots">Screenshots</a>
+      <a href="../changelog/">Changelog</a>
+      <a href="../privacy-policy/">Privacy</a>
+      <a href="../support/" class="active">Support</a>
+    </nav>
+  </header>
+
+  <main class="container policy">
+    <div class="card">
+      <h1>Support</h1>
+      <p class="lead">Need help with Feeder<span class="brand-pulse">Pulse</span>?</p>
+      <div class="pulse-line"></div>
+      <p>For questions, bug reports, or feedback, contact:</p>
+      <p><a href="mailto:feederpulseapp@gmail.com">feederpulseapp@gmail.com</a></p>
+      <h2>About the app</h2>
+      <p>Feeder<span class="">Pulse</span> is a feeder fishing timer and session tracker designed to help
+        with recast rhythm and fish counting.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Feeder<span class="">Pulse</span> · <a href="../privacy-policy/">Privacy
+        Policy</a></div>
+  </footer>
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        navMenu.classList.toggle('is-active');
+        
+        // Morph hamburger icon into close X
+        const icon = navToggle.querySelector('i');
+        if (icon) {
+          if (!isExpanded) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+          } else {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+          }
+        }
+        
+        document.body.style.overflow = !isExpanded ? 'hidden' : '';
+      });
+    }
+  </script>
+</body>
+
+</html>

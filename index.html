@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FeederPulse — Feeder Fishing Timer &amp; Session Tracker App</title>
+  <meta name="description" content="FeederPulse is the ultimate feeder fishing companion app for Android. Track recast timers, log catches by species and weight, analyse Session Pulse rhythms, and review competition results — all offline on the bank." />
+  <meta name="keywords" content="feeder fishing app, fishing timer, cast timer, feeder fishing tracker, session tracker, fishing log, feeder fishing Android, competition fishing app, catch logger, FeederPulse" />
+  <meta name="author" content="FeederPulse" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://feederpulse.app/" />
+
+  <!-- Theme colour (browser UI tinting on mobile) -->
+  <meta name="theme-color" content="#061212" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FeederPulse" />
+  <meta property="og:url" content="https://feederpulse.app/" />
+  <meta property="og:title" content="FeederPulse — Feeder Fishing Timer &amp; Session Tracker" />
+  <meta property="og:description" content="Keep your rhythm. Count every catch. FeederPulse helps anglers manage recast timing, track fish counts by species, and analyse session data — 100% offline." />
+  <meta property="og:image" content="https://feederpulse.app/assets/apple-touch-icon.png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:image:alt" content="FeederPulse app icon" />
+  <meta property="og:locale" content="en_GB" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@feederpulseapp" />
+  <meta name="twitter:url" content="https://feederpulse.app/" />
+  <meta name="twitter:title" content="FeederPulse — Feeder Fishing Timer &amp; Session Tracker" />
+  <meta name="twitter:description" content="Keep your rhythm. Count every catch. FeederPulse helps anglers manage recast timing, track fish counts by species, and analyse session data — 100% offline." />
+  <meta name="twitter:image" content="https://feederpulse.app/assets/apple-touch-icon.png" />
+
+  <!-- Favicon &amp; Touch Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <!-- Sitemap hint for crawlers -->
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+  <!-- JSON-LD Structured Data: MobileApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "FeederPulse",
+    "description": "FeederPulse is a feeder fishing companion app for tracking recast timers, logging catches by species and weight, analysing Session Pulse rhythms, and reviewing competition results — 100% offline.",
+    "url": "https://feederpulse.app/",
+    "applicationCategory": "SportsApplication",
+    "operatingSystem": "Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "screenshot": [
+      "https://feederpulse.app/assets/screenshots/1000002967.webp",
+      "https://feederpulse.app/assets/screenshots/1000003124.webp",
+      "https://feederpulse.app/assets/screenshots/1000003116.webp"
+    ],
+    "featureList": [
+      "Recast timer with countdown and count-up modes",
+      "Catch logging by species and weight",
+      "Session Pulse fishing rhythm analysis",
+      "Team-based competition tracking",
+      "Customizable active session layout",
+      "Casual leisure fishing mode",
+      "Offline-first, no internet required"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "FeederPulse",
+      "url": "https://feederpulse.app/"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XJ4RJ6B6T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5XJ4RJ6B6T');
+  </script>
+
+  <link rel="stylesheet" href="styles/main.css?v=1.0.1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+
+
+<body>
+  <header class="container nav">
+    <a class="brand" href="./" aria-label="FeederPulse home">
+      <img src="assets/logo.png" alt="FeederPulse Logo" class="brand-logo">
+      <span>Feeder<span class="brand-pulse">Pulse</span></span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <nav class="nav-links" id="nav-menu">
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="changelog/">Changelog</a>
+      <a href="privacy-policy/">Privacy</a>
+      <a href="support/">Support</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container hero">
+      <div>
+        <div class="kicker">Feeder fishing companion</div>
+        <h1>Keep your rhythm. Count every catch.</h1>
+        <p class="lead">FeederPulse helps anglers manage recast timing, track fish counts by species, and stay focused
+          during feeder fishing sessions.</p>
+        <div class="actions">
+          <a class="button primary" id="btn-join-beta" href="#features"><i class="fa-solid fa-paper-plane"></i>Join the Beta</a>
+          <a class="button" href="support/"><i class="fa-solid fa-envelope"></i>Contact Support</a>
+        </div>
+        <div class="badges">
+          <div class="badge-cta"><i class="fa-brands fa-apple"></i><div><span>Coming soon on</span><strong>App Store</strong></div></div>
+          <div class="badge-cta"><i class="fa-brands fa-google-play"></i><div><span>Coming soon on</span><strong>Google Play</strong></div></div>
+        </div>
+      </div>
+
+      <div class="phone-card" aria-label="Interactive App preview mockup" style="min-height: 400px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; padding: 20px;">
+        <!-- SCREEN 1: START SCREEN -->
+        <div class="mock-screen is-active" id="mock-screen-start" style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="text-align: center; margin-top: 14px;">
+            <strong class="phone-card-brand" style="font-size: 26px;">Feeder<span class="brand-pulse">Pulse</span></strong>
+            <p class="muted" style="font-size: 12px; margin-top: 6px; margin-bottom: 24px;">Your bank-side feeder fishing companion</p>
+            
+            <div style="display: inline-flex; width: 68px; height: 68px; background: rgba(99, 211, 190, 0.08); border: 1px solid var(--border); border-radius: 50%; align-items: center; justify-content: center; margin-bottom: 20px; animation: pulse-glow 2s infinite;">
+              <i class="fa-solid fa-fish" style="font-size: 26px; color: var(--accent);"></i>
+            </div>
+          </div>
+          
+          <div style="display: flex; flex-direction: column; gap: 10px; width: 100%; margin-bottom: 8px;">
+            <button class="mock-btn primary" id="btn-start-leisure" style="width: 100%; padding: 14px; font-size: 13px; border-radius: 14px;"><i class="fa-solid fa-mug-hot"></i>Start Leisure Session</button>
+            <button class="mock-btn" id="btn-start-match" style="width: 100%; padding: 14px; font-size: 13px; border-radius: 14px;"><i class="fa-solid fa-trophy"></i>Start Competition Match</button>
+          </div>
+        </div>
+
+        <!-- SCREEN 2: ACTIVE SESSION -->
+        <div class="mock-screen" id="mock-screen-active" style="width: 100%; height: 100%; display: none; flex-direction: column; justify-content: space-between;">
+          <div style="width: 100%;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(99, 211, 190, 0.15); padding-bottom: 8px; margin-bottom: 12px;">
+              <span id="mock-session-type" style="font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent);">Active Session</span>
+              <span id="mock-cast-counter" style="font-size: 11px; font-weight: 700; background: rgba(255,255,255,0.06); padding: 2px 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.08); color: var(--text);">Cast #1</span>
+            </div>
+            
+            <svg class="ekg-line" viewBox="0 0 800 54" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="height: 30px; margin: 4px 0 8px;">
+              <path class="ekg-trail" pathLength="850" d="M 0,27 L 100,27 C 110,27 115,17 120,17 C 125,17 130,27 170,27 L 178,33 L 188,4 L 196,36 L 205,27 L 230,27 C 248,27 265,12 282,12 C 299,12 316,27 340,27 L 400,27 L 500,27 C 510,27 515,17 520,17 C 525,17 530,27 570,27 L 578,33 L 588,4 L 596,36 L 605,27 L 630,27 C 648,27 665,12 682,12 C 699,12 716,27 740,27 L 800,27" />
+              <path class="ekg-glow" pathLength="850" d="M 0,27 L 100,27 C 110,27 115,17 120,17 C 125,17 130,27 170,27 L 178,33 L 188,4 L 196,36 L 205,27 L 230,27 C 248,27 265,12 282,12 C 299,12 316,27 340,27 L 400,27 L 500,27 C 510,27 515,17 520,17 C 525,17 530,27 570,27 L 578,33 L 588,4 L 596,36 L 605,27 L 630,27 C 648,27 665,12 682,12 C 699,12 716,27 740,27 L 800,27" />
+            </svg>
+            
+            <!-- TIMER SECTION (CASUAL MODE STYLE) -->
+            <div style="display: flex; gap: 8px; margin-bottom: 12px; align-items: center; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 14px; padding: 8px 10px;">
+              
+              <!-- Left Presets Grid Column -->
+              <div style="flex: 1.1; display: flex; flex-direction: column; gap: 4px;">
+                <span style="font-size: 8px; font-weight: 800; letter-spacing: 0.05em; color: rgba(255,255,255,0.4); text-transform: uppercase;">Timer preset</span>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 2px;">
+                  <button type="button" class="preset-btn active" data-time="300">5m</button>
+                  <button type="button" class="preset-btn" data-time="420">7m</button>
+                  <button type="button" class="preset-btn" data-time="600">10m</button>
+                  <button type="button" class="preset-btn" data-time="900">15m</button>
+                </div>
+                <div style="font-size: 8px; color: var(--accent); font-weight: 700; text-align: center; margin-top: 3px;" id="mock-active-preset-label">5 min active</div>
+              </div>
+              
+              <!-- Right Circular Dial Column -->
+              <div id="mock-dial-clickable" class="dial-container" style="flex: 0 0 96px;" title="Tap to flip dial">
+                <div id="mock-dial-inner" class="dial-inner">
+                  
+                  <!-- FRONT FACE: CAST TIME -->
+                  <div class="dial-face dial-face-front">
+                    <!-- SVG Circular Progress Ring -->
+                    <svg width="96" height="96" style="transform: rotate(-90deg); position: absolute; top:0; left:0; pointer-events: none;">
+                      <circle cx="48" cy="48" r="42" stroke="rgba(255,255,255,0.04)" stroke-width="4" fill="transparent" />
+                      <circle id="mock-progress-ring" cx="48" cy="48" r="42" stroke="var(--accent)" stroke-width="4" fill="transparent"
+                        stroke-dasharray="263.89" stroke-dashoffset="263.89" stroke-linecap="round" style="transition: stroke-dashoffset 0.3s ease; filter: drop-shadow(0 0 3px var(--accent));" />
+                    </svg>
+
+                    <!-- Front Content -->
+                    <div style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 2;">
+                      <i class="fa-solid fa-stopwatch" style="font-size: 11px; color: var(--accent); margin-bottom: 2px;"></i>
+                      <div id="mock-timer-cast" style="font-size: 12px; font-weight: 800; color: #fff; letter-spacing: -0.02em; font-family: monospace; line-height: 1.1;">00:05:00</div>
+                      <span id="mock-timer-cast-label" style="font-size: 6px; font-weight: 800; text-transform: uppercase; color: rgba(255,255,255,0.4); letter-spacing: 0.05em; margin-top: 1px;">CAST TIME</span>
+                    </div>
+                  </div>
+                  
+                  <!-- BACK FACE: FISHING TIME -->
+                  <div class="dial-face dial-face-back">
+                    <!-- Orange progress ring for fishing time -->
+                    <svg width="96" height="96" style="transform: rotate(-90deg); position: absolute; top:0; left:0; pointer-events: none;">
+                      <circle cx="48" cy="48" r="42" stroke="rgba(255,255,255,0.06)" stroke-width="4" fill="transparent" />
+                      <circle id="mock-fishing-ring" cx="48" cy="48" r="42" stroke="#E8A040" stroke-width="4" fill="transparent"
+                        stroke-dasharray="263.89" stroke-dashoffset="263.89" stroke-linecap="round" style="transition: stroke-dashoffset 0.3s ease; filter: drop-shadow(0 0 4px #E8A040);" />
+                    </svg>
+
+                    <!-- Back Content -->
+                    <div style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 2;">
+                      <i class="fa-solid fa-fish" style="font-size: 11px; color: #E8A040; margin-bottom: 2px;"></i>
+                      <div id="mock-timer-session" style="font-size: 12px; font-weight: 800; color: #fff; letter-spacing: -0.02em; font-family: monospace; line-height: 1.1;">00:00:00</div>
+                      <span style="font-size: 6px; font-weight: 800; text-transform: uppercase; color: rgba(232,160,64,0.6); letter-spacing: 0.05em; margin-top: 1px;">FISHING TIME</span>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+              
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 10px;">
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 4px; text-align: center;">
+                <span class="muted" style="font-size: 9px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.02em;">Fish logged</span>
+                <div id="mock-active-fish" style="font-size: 18px; font-weight: 800; color: var(--accent); margin-top: 1px;">0</div>
+              </div>
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 4px; text-align: center;">
+                <span class="muted" style="font-size: 9px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.02em;">Est. Weight</span>
+                <div id="mock-active-weight" style="font-size: 18px; font-weight: 800; color: var(--accent); margin-top: 1px;">0.00 kg</div>
+              </div>
+            </div>
+          </div>
+          
+          <div style="display: flex; flex-direction: column; gap: 8px; width: 100%; margin-top: 10px;">
+            <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 8px;">
+              <button class="mock-btn" id="btn-reset-timer" style="padding: 10px; font-size: 12px; border-radius: 12px;"><i class="fa-solid fa-arrow-rotate-left"></i>Reset Timer</button>
+              <button class="mock-btn primary" id="btn-add-fish" style="padding: 10px; font-size: 12px; border-radius: 12px;"><i class="fa-solid fa-fish"></i>+ Fish</button>
+            </div>
+            <button class="mock-btn" id="btn-end-session" style="background: rgba(255, 75, 75, 0.12); border: 1px solid rgba(255, 75, 75, 0.2); color: #ff6b6b; padding: 8px; font-size: 11px; border-radius: 10px; font-weight: 700; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px;"><i class="fa-solid fa-circle-stop"></i>End Session</button>
+          </div>
+        </div>
+
+        <!-- SCREEN 3: SESSION SUMMARY -->
+        <div class="mock-screen" id="mock-screen-summary" style="width: 100%; height: 100%; display: none; flex-direction: column; justify-content: space-between;">
+          <div style="text-align: center; margin-top: 10px; width: 100%;">
+            <div style="width: 50px; height: 50px; background: rgba(99, 211, 190, 0.12); color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; margin: 0 auto 12px; border: 1px solid var(--border);">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 2px;">Session Finished</h3>
+            <span id="mock-summary-type" style="font-size: 9px; font-weight: 800; text-transform: uppercase; color: var(--accent); background: rgba(99, 211, 190, 0.1); border: 1px solid var(--border); padding: 2px 8px; border-radius: 999px; letter-spacing: 0.05em; display: inline-block; margin-bottom: 12px;">Leisure</span>
+            
+            <div style="display: flex; flex-direction: column; gap: 8px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 12px; text-align: left; width: 100%;">
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 4px; font-size: 12px;">
+                <span class="muted">Total Casts</span>
+                <strong id="mock-summary-casts" style="color: var(--text);">0</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 4px; font-size: 12px;">
+                <span class="muted">Total Catches</span>
+                <strong id="mock-summary-fish" style="color: var(--accent);">0 fish</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 12px;">
+                <span class="muted">Total Est. Weight</span>
+                <strong id="mock-summary-weight" style="color: var(--accent);">0.00 kg</strong>
+              </div>
+            </div>
+          </div>
+          <button class="mock-btn primary" id="btn-summary-done" style="width: 100%; padding: 12px; font-size: 13px; border-radius: 12px; margin-bottom: 4px;"><i class="fa-solid fa-rotate-left"></i>New Session</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section" id="features">
+      <h2>Built for practical bank-side use</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon"><i class="fa-solid fa-stopwatch"></i></div>
+          <h3>Cast Timer</h3>
+          <p class="muted">Set a recast rhythm and get simple timer reminders while fishing.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon"><i class="fa-solid fa-fish"></i></div>
+          <h3>Fish Counter</h3>
+          <p class="muted">Track multiple fish types during a session with fast one-tap counting.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon"><i class="fa-solid fa-chart-bar"></i></div>
+          <h3>Session Tracking</h3>
+          <p class="muted">Keep local records of your fishing sessions and review basic totals.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section" id="session-pulse">
+      <div class="pulse-showcase-card">
+        <div class="pulse-badge"><i class="fa-solid fa-heart-pulse"></i> NEW BRAND FEATURE</div>
+        <div class="pulse-content">
+          <h2>Introducing Session Pulse Analysis</h2>
+          <p class="lead">Evolve your session log from a raw catch list into a living visual rhythm. FeederPulse now tracks casting momentum, catch spikes, and feed intervals to generate a premium ECG-style heartbeat fingerprint of your session.</p>
+          
+          <div class="pulse-features-grid">
+            <div class="pulse-feature-item">
+              <i class="fa-solid fa-chart-line"></i>
+              <div>
+                <h4>ECG Session Fingerprint</h4>
+                <p class="muted">Visualize peak action, recovery spells, and feeding momentum in a smooth curved chart.</p>
+              </div>
+            </div>
+            <div class="pulse-feature-item">
+              <i class="fa-solid fa-hourglass-half"></i>
+              <div>
+                <h4>Period & Window Detection</h4>
+                <p class="muted">Find your exact 40-minute peak biting window and automatic dead-zone inactivity lulls.</p>
+              </div>
+            </div>
+            <div class="pulse-feature-item">
+              <i class="fa-solid fa-brain"></i>
+              <div>
+                <h4>Automated Bank Insights</h4>
+                <p class="muted">Get local, context-aware textual summaries explaining catch consistency and pacing fatigue.</p>
+              </div>
+            </div>
+            <div class="pulse-feature-item">
+              <i class="fa-solid fa-signature"></i>
+              <div>
+                <h4>Pulse Sparklines</h4>
+                <p class="muted">Review completed sessions with their miniature sparkline fingerprint in the history list.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section" id="screenshots">
+      <h2><i class="fa-solid fa-mobile-screen"></i>Screenshots</h2>
+      <div class="screenshots-scroll">
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/1000002975.webp" alt="Home screen with upcoming events" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>Home</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/1000002967.webp"
+            alt="Live competition session with cast timer and fish logging" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>Live Session</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/1000003116.webp" alt="Casual Mode active session showing fishing elapsed time" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>Casual Session (Fishing Time)</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/1000003120.webp" alt="Casual Mode active session showing circular cast progress ring" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>Casual Session (Cast Time)</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/1000002971.webp" alt="Custom cast timer setup" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>Cast Timer</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/1000002969.webp" alt="Long-press on a weight preset opens the Refine Weight bottom sheet with a precision slider" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>Weight Refinement</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/1000002973.webp" alt="Session log showing casts and fish caught" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>Session Log</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/1000003000.webp" alt="Catch timeline and species breakdown charts" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>Stats</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/1000003002.webp" alt="Catches by distance chart and detailed cast list" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>Charts</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/1000002977.webp" alt="Session history list" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>History</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/1000003122.webp" alt="Sessions history list with Session Pulse sparklines per session" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>Session Sparklines</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/1000003124.webp" alt="Session Pulse analytics — ECG-style fishing rhythm chart with Peak Pulse, Stability and Dead Zone metrics" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>Session Pulse</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/1000003137.webp" alt="New event setup with Team-based competition toggle" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>Team Setup</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/1000003135.webp" alt="Sessions history list with team icon and sparklines" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>Team History</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/1000003133.webp" alt="Session detail showing Final Placement with Team Ranking" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>Team Ranking</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/1000003129.webp" alt="Final weigh-in dialog for recording total keepnet weight" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>Final Weigh-in</figcaption>
+        </figure>
+        <figure class="screenshot-frame">
+          <img src="assets/screenshots/layout_editor.webp" alt="Customizable Active Session Layout editor with draggable widget cards" loading="lazy" role="button" aria-haspopup="dialog" />
+          <figcaption>Layout Editor</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="container section">
+      <div class="card">
+        <h2><i class="fa-solid fa-rocket"></i>Coming soon</h2>
+        <p class="muted">Wear OS support, improved statistics, and more session insights are planned for future
+          versions.</p>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="lightbox" id="screenshot-lightbox" closedby="any" aria-label="Screenshot preview">
+    <div class="lightbox-content">
+      <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous screenshot" id="lightbox-prev">
+        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button class="lightbox-nav lightbox-next" type="button" aria-label="Next screenshot" id="lightbox-next">
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </button>
+      <button class="lightbox-close" type="button" aria-label="Close screenshot preview" data-close-lightbox>
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <img id="lightbox-image" src="" alt="" />
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </dialog>
+
+  <dialog class="lightbox" id="beta-dialog" closedby="any" aria-label="Join the Beta Program">
+    <div class="lightbox-content beta-content">
+      <button class="lightbox-close" type="button" aria-label="Close form" data-close-beta style="position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border: 0; border-radius: 999px; background: rgba(255, 255, 255, 0.1); color: var(--text); cursor: pointer; display: flex; align-items: center; justify-content: center;">
+        <i class="fa-solid fa-xmark" aria-hidden="true" style="font-size: 16px;"></i>
+      </button>
+      <div id="beta-form-container">
+        <h2 style="margin-top: 0; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; font-size: 24px;">
+          <i class="fa-solid fa-rocket" style="color: var(--accent);"></i>Join the Beta
+        </h2>
+        <p class="muted" style="font-size: 14px; margin-bottom: 20px; line-height: 1.5;">Get early access to FeederPulse, try the new Session Pulse features, and help us refine bank-side analytics.</p>
+        
+        <form id="beta-signup-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="beta-email" style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text);">Email Address</label>
+            <input type="email" id="beta-email" required placeholder="name@domain.com" 
+              style="width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border); background: rgba(255, 255, 255, 0.05); color: var(--text); font-family: inherit; font-size: 14px; outline: none; transition: border-color 0.25s;" />
+          </div>
+          
+          <div class="form-group" style="margin-top: 16px;">
+            <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text);">Operating System</label>
+            <select id="beta-platform" style="width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-soft); color: var(--text); font-family: inherit; font-size: 14px; outline: none; cursor: pointer;">
+              <option value="ios">iOS (Apple TestFlight)</option>
+              <option value="android">Android (Google Play Beta)</option>
+            </select>
+          </div>
+          
+          <button type="submit" class="mock-btn primary" id="btn-submit-beta" style="width: 100%; margin-top: 24px; min-height: 48px; border-radius: 14px; border: none; font-size: 15px; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; cursor: pointer;">
+            <i class="fa-solid fa-paper-plane"></i>Request Invitation
+          </button>
+        </form>
+      </div>
+      
+      <div id="beta-success-container" style="display: none; text-align: center; padding: 20px 0;">
+        <div style="width: 64px; height: 64px; background: rgba(99, 211, 190, 0.15); color: var(--accent); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 16px; border: 1px solid var(--border); margin-inline: auto;">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h3 style="color: var(--text); margin: 0 0 8px; font-size: 20px;">You're on the list!</h3>
+        <p class="muted" style="font-size: 14px; margin-bottom: 0; line-height: 1.5;">Thank you for requesting an invitation. We'll send your TestFlight and Google Play Beta instructions to <strong id="submitted-email" style="color: var(--text);"></strong> soon.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <footer>
+    <div class="container">© 2026 Feeder<span class="">Pulse</span> · <a href="privacy-policy/">Privacy
+        Policy</a> · <a href="support/">Support</a></div>
+  </footer>
+
+  <script>
+    // Navigation Hamburger Toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        navMenu.classList.toggle('is-active');
+        
+        // Morph hamburger icon into close X
+        const icon = navToggle.querySelector('i');
+        if (icon) {
+          if (!isExpanded) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+          } else {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+          }
+        }
+
+        // Toggle body scroll lock when menu is active on mobile
+        document.body.style.overflow = !isExpanded ? 'hidden' : '';
+      });
+
+      // Close menu when navigation links are clicked
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.setAttribute('aria-expanded', 'false');
+          navMenu.classList.remove('is-active');
+          document.body.style.overflow = '';
+          
+          const icon = navToggle.querySelector('i');
+          if (icon) {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+          }
+        });
+      });
+    }
+
+    // Hero Interactive Mockup Logic - 3-State App Flow
+    const screenStart = document.getElementById('mock-screen-start');
+    const screenActive = document.getElementById('mock-screen-active');
+    const screenSummary = document.getElementById('mock-screen-summary');
+
+    const btnStartLeisure = document.getElementById('btn-start-leisure');
+    const btnStartMatch = document.getElementById('btn-start-match');
+    const btnResetTimer = document.getElementById('btn-reset-timer');
+    const btnAddFish = document.getElementById('btn-add-fish');
+    const btnEndSession = document.getElementById('btn-end-session');
+    const btnSummaryDone = document.getElementById('btn-summary-done');
+
+    const mockTimer = document.getElementById('mock-timer');
+    const mockTimerLabel = document.getElementById('mock-timer-label');
+    const mockCastCounter = document.getElementById('mock-cast-counter');
+    const mockActiveFish = document.getElementById('mock-active-fish');
+    const mockActiveWeight = document.getElementById('mock-active-weight');
+    const mockSessionType = document.getElementById('mock-session-type');
+
+    const mockSummaryType = document.getElementById('mock-summary-type');
+    const mockSummaryCasts = document.getElementById('mock-summary-casts');
+    const mockSummaryFish = document.getElementById('mock-summary-fish');
+    const mockSummaryWeight = document.getElementById('mock-summary-weight');
+
+    let timerInterval = null;
+    let autoRevertTimeout = null; // Auto-revert timeout
+    let totalSessionSeconds = 0;
+    let currentCastSeconds = 0;
+    let activePresetSeconds = 300; // 5 min default
+    let isFishingTimeMode = false;
+    let isTimerActive = true; // Cast timer is active by default
+    let fishCount = 0;
+    let totalWeight = 0.0;
+    let castCount = 1;
+    let sessionType = 'Leisure';
+
+    const formatTimeHHMMSS = (secs) => {
+      const hours = Math.floor(secs / 3600);
+      const minutes = Math.floor((secs % 3600) / 60);
+      const remainingSeconds = secs % 60;
+      return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+    };
+
+    const showScreen = (screen) => {
+      [screenStart, screenActive, screenSummary].forEach(s => {
+        if (s) s.style.display = 'none';
+      });
+      if (screen) screen.style.display = 'flex';
+    };
+
+    const updateProgressRing = () => {
+      const circumference = 263.89;
+      
+      // Cast time ring (teal) — drains as cast countdown runs
+      const progressRing = document.getElementById('mock-progress-ring');
+      if (progressRing) {
+        const remainingSeconds = Math.max(activePresetSeconds - currentCastSeconds, 0);
+        const castProgress = Math.min(remainingSeconds / activePresetSeconds, 1);
+        progressRing.style.strokeDashoffset = circumference * (1 - castProgress);
+      }
+      
+      // Fishing time ring (orange) — fills up as session time grows
+      // Pulse every 10 min (600s) as a reference cycle so the ring has meaning
+      const fishingRing = document.getElementById('mock-fishing-ring');
+      if (fishingRing) {
+        const cycleDuration = 600; // 10 min cycle
+        const fishingProgress = Math.min((totalSessionSeconds % cycleDuration) / cycleDuration, 1);
+        fishingRing.style.strokeDashoffset = circumference * (1 - fishingProgress);
+      }
+    };
+
+    const updateDialUI = () => {
+      const timerCastElem = document.getElementById('mock-timer-cast');
+      const labelCastElem = document.getElementById('mock-timer-cast-label');
+      const timerSessionElem = document.getElementById('mock-timer-session');
+      const innerDial = document.getElementById('mock-dial-inner');
+      
+      // Update Fishing Time face (back face)
+      if (timerSessionElem) {
+        timerSessionElem.textContent = formatTimeHHMMSS(totalSessionSeconds);
+      }
+      
+      // Update Cast Time face (front face)
+      const remainingSeconds = Math.max(activePresetSeconds - currentCastSeconds, 0);
+      const expired = remainingSeconds <= 0;
+      if (timerCastElem) {
+        if (expired) {
+          timerCastElem.textContent = 'RECAST!';
+          timerCastElem.style.color = 'var(--accent)';
+        } else {
+          timerCastElem.textContent = formatTimeHHMMSS(remainingSeconds);
+          timerCastElem.style.color = '#fff';
+        }
+      }
+      if (labelCastElem) {
+        labelCastElem.textContent = expired ? 'TIMER EXPIRED' : 'CAST TIME';
+        labelCastElem.style.color = expired ? 'var(--accent)' : 'rgba(255,255,255,0.4)';
+      }
+      
+      // Update 3D flipped class on inner dial container
+      if (innerDial) {
+        if (isFishingTimeMode) {
+          innerDial.classList.add('is-flipped');
+        } else {
+          innerDial.classList.remove('is-flipped');
+        }
+      }
+      
+      updateProgressRing();
+    };
+
+    const startTimer = () => {
+      clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        totalSessionSeconds++;
+        currentCastSeconds++;
+        updateDialUI();
+        
+        if (!isFishingTimeMode && currentCastSeconds === activePresetSeconds) {
+          const timerElem = document.getElementById('mock-timer-cast');
+          if (timerElem) {
+            timerElem.animate([
+              { opacity: 1, scale: 1 },
+              { opacity: 0.5, scale: 1.05 },
+              { opacity: 1, scale: 1 }
+            ], { duration: 500, iterations: 3 });
+          }
+        }
+      }, 1000);
+    };
+
+    const startSession = (type) => {
+      sessionType = type;
+      fishCount = 0;
+      totalWeight = 0.0;
+      castCount = 1;
+      totalSessionSeconds = 0;
+      currentCastSeconds = 0;
+      isFishingTimeMode = false;
+      activePresetSeconds = 300;
+      isTimerActive = true;
+
+      document.querySelectorAll('.preset-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-time') === '300') {
+          btn.classList.add('active');
+        }
+      });
+      const presetLabel = document.getElementById('mock-active-preset-label');
+      if (presetLabel) presetLabel.textContent = '5 min active';
+
+      if (mockSessionType) mockSessionType.textContent = `${type} Session`;
+      if (mockCastCounter) mockCastCounter.textContent = `Cast #1`;
+      if (mockActiveFish) mockActiveFish.textContent = '0';
+      if (mockActiveWeight) mockActiveWeight.textContent = '0.00 kg';
+
+      showScreen(screenActive);
+      updateDialUI();
+      startTimer();
+    };
+
+    if (btnStartLeisure) {
+      btnStartLeisure.addEventListener('click', () => startSession('Leisure'));
+    }
+
+    if (btnStartMatch) {
+      btnStartMatch.addEventListener('click', () => startSession('Match'));
+    }
+
+    // Quick presets click listener
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const newTime = parseInt(btn.getAttribute('data-time'), 10);
+        activePresetSeconds = newTime;
+        isTimerActive = true; // Preset selected ensures timer is active
+        
+        const presetLabel = document.getElementById('mock-active-preset-label');
+        if (presetLabel) {
+          presetLabel.textContent = `${Math.floor(newTime / 60)} min active`;
+        }
+        
+        currentCastSeconds = 0;
+        updateDialUI();
+        
+        btn.animate([
+          { transform: 'scale(1)' },
+          { transform: 'scale(0.95)' },
+          { transform: 'scale(1)' }
+        ], { duration: 150 });
+      });
+    });
+
+    // Tap on the Circular Dial (or Horizontal Toggle) to switch mode Logic
+    const dialClickable = document.getElementById('mock-dial-clickable');
+    if (dialClickable) {
+      dialClickable.addEventListener('click', (e) => {
+        e.stopPropagation();
+        isFishingTimeMode = !isFishingTimeMode;
+        updateDialUI();
+        
+        // Small scale bounce on the entire dial container for active tap feedback
+        dialClickable.animate([
+          { transform: 'scale(1)' },
+          { transform: 'scale(0.97)' },
+          { transform: 'scale(1)' }
+        ], { duration: 200, easing: 'ease-out' });
+
+        // Auto-revert logic: after 3 seconds, flip back to Cast Time if the timer is active
+        clearTimeout(autoRevertTimeout);
+        if (isFishingTimeMode && isTimerActive) {
+          autoRevertTimeout = setTimeout(() => {
+            isFishingTimeMode = false;
+            updateDialUI();
+          }, 3000);
+        }
+      });
+    }
+
+    if (btnResetTimer) {
+      btnResetTimer.addEventListener('click', () => {
+        currentCastSeconds = 0;
+        updateDialUI();
+        castCount++;
+        if (mockCastCounter) mockCastCounter.textContent = `Cast #${castCount}`;
+        
+        btnResetTimer.animate([
+          { transform: 'rotate(0deg)' },
+          { transform: 'rotate(-360deg)' }
+        ], { duration: 400, easing: 'ease-out' });
+      });
+    }
+
+    if (btnAddFish) {
+      btnAddFish.addEventListener('click', () => {
+        fishCount++;
+        const addedWeight = (Math.random() * 2.5 + 0.35);
+        totalWeight += addedWeight;
+
+        if (mockActiveFish) mockActiveFish.textContent = fishCount;
+        if (mockActiveWeight) mockActiveWeight.textContent = `${totalWeight.toFixed(2)} kg`;
+
+        currentCastSeconds = 0;
+        updateDialUI();
+        
+        castCount++;
+        if (mockCastCounter) mockCastCounter.textContent = `Cast #${castCount}`;
+
+        const activeContainer = document.getElementById('mock-screen-active');
+        if (activeContainer) {
+          activeContainer.animate([
+            { transform: 'scale(1)' },
+            { transform: 'scale(1.02)' },
+            { transform: 'scale(1)' }
+          ], { duration: 200, easing: 'ease-out' });
+        }
+      });
+    }
+
+    if (btnEndSession) {
+      btnEndSession.addEventListener('click', () => {
+        clearInterval(timerInterval);
+        clearTimeout(autoRevertTimeout);
+        
+        if (mockSummaryType) mockSummaryType.textContent = sessionType;
+        if (mockSummaryCasts) mockSummaryCasts.textContent = castCount;
+        if (mockSummaryFish) mockSummaryFish.textContent = `${fishCount} fish`;
+        if (mockSummaryWeight) mockSummaryWeight.textContent = `${totalWeight.toFixed(2)} kg`;
+
+        showScreen(screenSummary);
+      });
+    }
+
+    if (btnSummaryDone) {
+      btnSummaryDone.addEventListener('click', () => {
+        showScreen(screenStart);
+      });
+    }
+
+    // Lightbox Modal Logic
+    const screenshotImages = Array.from(document.querySelectorAll('.screenshots-scroll img'));
+    const lightbox = document.getElementById('screenshot-lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const closeElements = document.querySelectorAll('[data-close-lightbox]');
+    const prevButton = document.getElementById('lightbox-prev');
+    const nextButton = document.getElementById('lightbox-next');
+    let activeIndex = -1;
+
+    const renderLightboxImage = (index) => {
+      const image = screenshotImages[index];
+      if (!image) {
+        return;
+      }
+
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+      lightboxCaption.textContent = image.closest('figure')?.querySelector('figcaption')?.textContent || image.alt;
+      activeIndex = index;
+    };
+
+    const openLightbox = (index) => {
+      renderLightboxImage(index);
+      if (lightbox && typeof lightbox.showModal === 'function') {
+        lightbox.showModal();
+      }
+    };
+
+    const moveLightbox = (direction) => {
+      if (screenshotImages.length === 0 || activeIndex === -1) {
+        return;
+      }
+
+      const nextIndex = (activeIndex + direction + screenshotImages.length) % screenshotImages.length;
+      renderLightboxImage(nextIndex);
+    };
+
+    const closeLightbox = () => {
+      if (lightbox && typeof lightbox.close === 'function') {
+        lightbox.close();
+      }
+    };
+
+    screenshotImages.forEach((image, index) => {
+      image.tabIndex = 0;
+      image.addEventListener('click', () => openLightbox(index));
+      image.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openLightbox(index);
+        }
+      });
+    });
+
+    if (prevButton) prevButton.addEventListener('click', () => moveLightbox(-1));
+    if (nextButton) nextButton.addEventListener('click', () => moveLightbox(1));
+
+    closeElements.forEach((element) => {
+      element.addEventListener('click', closeLightbox);
+    });
+
+    if (lightbox) {
+      lightbox.addEventListener('close', () => {
+        lightboxImage.src = '';
+        activeIndex = -1;
+      });
+
+      // Fallback for browsers that do not support the closedby="any" attribute (light dismiss)
+      if (!('closedBy' in HTMLDialogElement.prototype)) {
+        lightbox.addEventListener('click', (event) => {
+          if (event.target !== lightbox) return;
+          
+          // Click coordinate boundaries check for actual backdrop click
+          const rect = lightbox.getBoundingClientRect();
+          const isInside = (
+            rect.top <= event.clientY &&
+            event.clientY <= rect.top + rect.height &&
+            rect.left <= event.clientX &&
+            event.clientX <= rect.left + rect.width
+          );
+          if (!isInside) {
+            closeLightbox();
+          }
+        });
+      }
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (!lightbox || !lightbox.open) {
+        return;
+      }
+
+      if (event.key === 'ArrowLeft') {
+        moveLightbox(-1);
+      } else if (event.key === 'ArrowRight') {
+        moveLightbox(1);
+      }
+    });
+
+    // Join Beta Modal Dialog Logic
+    const btnJoinBeta = document.getElementById('btn-join-beta');
+    const betaDialog = document.getElementById('beta-dialog');
+    const closeBetaBtn = document.querySelector('[data-close-beta]');
+    const betaForm = document.getElementById('beta-signup-form');
+    const betaEmailInput = document.getElementById('beta-email');
+    const betaFormContainer = document.getElementById('beta-form-container');
+    const betaSuccessContainer = document.getElementById('beta-success-container');
+    const submittedEmailSpan = document.getElementById('submitted-email');
+    const btnSubmitBeta = document.getElementById('btn-submit-beta');
+
+    // === GOOGLE FORM CONFIGURATION ===
+    // Instructions to enable:
+    // 1. Create a Google Form with:
+    //    - Question 1 (Short Answer) for "Email Address"
+    //    - Question 2 (Dropdown or Multiple Choice) for "Primary Fishing Style"
+    // 2. Replace the placeholder URL below with your form's direct '/formResponse' URL
+    // 3. Inspect your published form's HTML inputs to locate their name attributes (e.g. entry.123456) and update below.
+    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeqZskbdqSc6c11c17m3r1SKpIv7epmApbDTXId8ToBR0AchA/formResponse';
+    const GOOGLE_FORM_ENTRY_EMAIL = 'entry.1030772108'; // Real Google Form Email entry ID
+    const GOOGLE_FORM_ENTRY_PLATFORM = 'entry.1359795977'; // Real Google Form OS/Platform entry ID
+
+    const openBetaDialog = (e) => {
+      e.preventDefault();
+      // Reset state
+      betaFormContainer.style.display = 'block';
+      betaSuccessContainer.style.display = 'none';
+      betaForm.reset();
+      if (betaDialog && typeof betaDialog.showModal === 'function') {
+        betaDialog.showModal();
+      }
+    };
+
+    const closeBetaDialog = () => {
+      if (betaDialog && typeof betaDialog.close === 'function') {
+        betaDialog.close();
+      }
+    };
+
+    if (btnJoinBeta && betaDialog) {
+      btnJoinBeta.addEventListener('click', openBetaDialog);
+    }
+
+    const badgeCtas = document.querySelectorAll('.badge-cta');
+    badgeCtas.forEach(badge => {
+      if (betaDialog) {
+        badge.addEventListener('click', openBetaDialog);
+      }
+    });
+
+    if (closeBetaBtn) {
+      closeBetaBtn.addEventListener('click', closeBetaDialog);
+    }
+
+    if (betaDialog) {
+      // Light dismiss for legacy compatibility
+      if (!('closedBy' in HTMLDialogElement.prototype)) {
+        betaDialog.addEventListener('click', (event) => {
+          if (event.target !== betaDialog) return;
+          const rect = betaDialog.getBoundingClientRect();
+          const isInside = (
+            rect.top <= event.clientY &&
+            event.clientY <= rect.top + rect.height &&
+            rect.left <= event.clientX &&
+            event.clientX <= rect.left + rect.width
+          );
+          if (!isInside) {
+            closeBetaDialog();
+          }
+        });
+      }
+    }
+
+    if (betaForm) {
+      betaForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = betaEmailInput.value.trim();
+        const platform = document.getElementById('beta-platform').value;
+        if (!email) return;
+
+        // Show loading state
+        btnSubmitBeta.disabled = true;
+        btnSubmitBeta.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>Submitting...';
+
+        // Set up form submission payloads
+        const formData = new FormData();
+        formData.append(GOOGLE_FORM_ENTRY_EMAIL, email);
+        formData.append(GOOGLE_FORM_ENTRY_PLATFORM, platform);
+
+        // POST request sent to Google Forms in no-cors background mode
+        fetch(GOOGLE_FORM_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: formData
+        })
+        .then(() => {
+          // Success view transition
+          submittedEmailSpan.textContent = email;
+          betaFormContainer.style.display = 'none';
+          betaSuccessContainer.style.display = 'block';
+        })
+        .catch((error) => {
+          console.error('Beta submission failed:', error);
+          // Fallback transition (no-cors mode sometimes lands in catch due to response headers, but data is sent)
+          submittedEmailSpan.textContent = email;
+          betaFormContainer.style.display = 'none';
+          betaSuccessContainer.style.display = 'block';
+        })
+        .finally(() => {
+          btnSubmitBeta.disabled = false;
+          btnSubmitBeta.innerHTML = '<i class="fa-solid fa-paper-plane"></i>Request Invitation';
+        });
+      });
+    }
+  </script>
+</body>
+
+
+</html>

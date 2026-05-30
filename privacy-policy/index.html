@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — FeederPulse</title>
+  <meta name="description" content="FeederPulse privacy policy and data protection details." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://feederpulse.app/privacy-policy/" />
+  <meta property="og:title" content="Privacy Policy — FeederPulse" />
+  <meta property="og:description" content="Read about how FeederPulse respects and protects your privacy offline." />
+  <meta property="og:image" content="https://feederpulse.app/assets/apple-touch-icon.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://feederpulse.app/privacy-policy/" />
+  <meta property="twitter:title" content="Privacy Policy — FeederPulse" />
+  <meta property="twitter:description" content="Read about how FeederPulse respects and protects your privacy offline." />
+  <meta property="twitter:image" content="https://feederpulse.app/assets/apple-touch-icon.png" />
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+
+  <!-- Google Fonts (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XJ4RJ6B6T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5XJ4RJ6B6T');
+  </script>
+
+  <link rel="stylesheet" href="../styles/main.css?v=1.0.1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+
+<body>
+  <header class="container nav">
+    <a class="brand" href="../" aria-label="FeederPulse home">
+      <img src="../assets/logo.png" alt="FeederPulse Logo" class="brand-logo">
+      <span>Feeder<span class="brand-pulse">Pulse</span></span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <nav class="nav-links" id="nav-menu">
+      <a href="../">Home</a>
+      <a href="../#features">Features</a>
+      <a href="../#screenshots">Screenshots</a>
+      <a href="../changelog/">Changelog</a>
+      <a href="../privacy-policy/" class="active">Privacy</a>
+      <a href="../support/">Support</a>
+    </nav>
+  </header>
+
+  <main class="container policy">
+    <div class="card">
+      <h1>Privacy Policy</h1>
+      <p class="muted">Last updated: May 2026</p>
+      <div class="pulse-line"></div>
+
+      <p>Feeder<span class="">Pulse</span> respects your privacy.</p>
+
+      <h2>Data Collection</h2>
+      <p>Feeder<span class="">Pulse</span> does not collect, store, or share personal information.</p>
+      <p>The application operates primarily offline and stores fishing session data locally on your device only.</p>
+
+      <h2>Permissions</h2>
+      <p>The app may use the following device features:</p>
+      <ul>
+        <li>Notifications: used for fishing timer alerts and reminders.</li>
+        <li>Vibration: used for timer and event feedback.</li>
+      </ul>
+      <p>These features are used only for core app functionality.</p>
+
+      <h2>Third-Party Services</h2>
+      <p>Feeder<span class="brand-pulse">Pulse</span> uses third-party services to track usage statistics and optimize performance:</p>
+      <ul>
+        <li><strong>Google Analytics</strong>: We collect anonymous, aggregated website traffic statistics to help us improve your landing page experience.</li>
+      </ul>
+      <p><strong>Advertising</strong>: While we may introduce advertising in the future to help support the development of FeederPulse, there are <strong>currently no advertisements</strong> active on either the website or the mobile app. No tracking identifiers or data are collected or shared for advertising purposes at this time.</p>
+
+      <h2>Data Storage</h2>
+      <p>All session data, counters, and timer settings are stored locally on your device.</p>
+      <p>No cloud synchronization is currently implemented.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>Feeder<span class="">Pulse</span> does not knowingly collect personal information from children.</p>
+
+      <h2>Contact</h2>
+      <p><a href="mailto:feederpulseapp@gmail.com">feederpulseapp@gmail.com</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Feeder<span class="">Pulse</span> · <a href=" ../">Home</a></div>
+  </footer>
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        navMenu.classList.toggle('is-active');
+        
+        // Morph hamburger icon into close X
+        const icon = navToggle.querySelector('i');
+        if (icon) {
+          if (!isExpanded) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+          } else {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+          }
+        }
+        
+        document.body.style.overflow = !isExpanded ? 'hidden' : '';
+      });
+    }
+  </script>
+</body>
+
+</html>
